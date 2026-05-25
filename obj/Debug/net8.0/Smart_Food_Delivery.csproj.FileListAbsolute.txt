@@ -1,0 +1,14 @@
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/bin/Debug/net8.0/Smart_Food_Delivery
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/bin/Debug/net8.0/Smart_Food_Delivery.deps.json
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/bin/Debug/net8.0/Smart_Food_Delivery.runtimeconfig.json
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/bin/Debug/net8.0/Smart_Food_Delivery.dll
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/bin/Debug/net8.0/Smart_Food_Delivery.pdb
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.AssemblyInfoInputs.cache
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.AssemblyInfo.cs
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.csproj.CoreCompileInputs.cache
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.dll
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/refint/Smart_Food_Delivery.dll
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.pdb
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.genruntimeconfig.cache
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/ref/Smart_Food_Delivery.dll
