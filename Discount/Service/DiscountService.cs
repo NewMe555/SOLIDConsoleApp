@@ -13,8 +13,7 @@ namespace Smart_Food_Delivery.Discount.Service
         {
             decimal discountAmount=_discount.Discount(grandTotal);
             decimal finalAmount=grandTotal-discountAmount;
-
-            System.Console.WriteLine($"Discount Amount: Rs{discountAmount}");
+             System.Console.WriteLine($"Discount Amount: Rs{discountAmount}");
             System.Console.WriteLine($"Final Amount: Rs{finalAmount}");
             return finalAmount;
         }

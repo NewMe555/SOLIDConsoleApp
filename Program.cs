@@ -7,6 +7,10 @@ using Smart_Food_Delivery.Shared.SeedData;
 using Smart_Food_Delivery.Shared.Enums;
 using Smart_Food_Delivery.Discount.Implementation;
 using Smart_Food_Delivery.Discount.Service;
+using Smart_Food_Delivery.Payment.PaymentService.cs;
+using Smart_Food_Delivery.Payment.Abstraction;
+using Smart_Food_Delivery.Payment.Implementation;
+using Smart_Food_Delivery.Payments.Implementation;
 namespace Smart_Food_Delivery
 {
     public class Program
@@ -69,25 +73,42 @@ namespace Smart_Food_Delivery
       1. No Discount 
       2.Flat Rs 50 Discount
       3. 10% Discount");
-      DiscountType discountType =(DiscountType)Convert.ToInt32(Console.ReadLine());
-      Console.WriteLine($"Selected Discount:{(int)discountType} - {discountType}");
-      Dictionary<DiscountType, IDiscount> discounts =
-    new()
-{
-    { DiscountType.NoDiscount,
-      new NoDiscount() },
+     DiscountType discountType=(DiscountType)Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine($"Selected Discount:{(int)(discountType)}-{discountType}");
+      Dictionary <DiscountType,IDiscount> discounts= 
+            new()
+            {
+                
+                {
+                    DiscountType.NoDiscount,
+                    new NoDiscount()
+                },
+                 
+                {
+                    DiscountType.FlatDiscount,
+                    new FlatDiscount()
+                },
+                 
+                {
+                    DiscountType.PercentageDiscount,
+                    new PercentageDiscount()
+                }
+            };
+            IDiscount discount=discounts[discountType];
+            DiscountService discountService=new DiscountService(discount);
+            decimal finalAmount=discountService.ApplyDiscount(grandTotal);
+Console.WriteLine($"Select Payment Method: 1. Cash 2. UPI 3. Card");
+           int paymentChoice=Convert.ToInt32(Console.ReadLine());
+           Dictionary<int,PaymentTypes> payments = new()
+           {
+               {1,new Cash()},
+               {2,new UPI()},
+               {3,new Card()}
 
-    { DiscountType.FlatDiscount,
-      new FlatDiscount() },
-
-    { DiscountType.PercentageDiscount,
-      new PercentageDiscount() }
-};
-IDiscount discount =
-    discounts[discountType];
-DiscountService discountService =
-    new DiscountService(discount);
-    discountService.ApplyDiscount(grandTotal);
+           };
+           PaymentTypes payment=payments[paymentChoice];
+            PaymentService paymentService=new PaymentService(payment);
+            paymentService.ExcutePayment(finalAmount);
       }
     
     }

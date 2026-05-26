@@ -12,3 +12,4 @@
 /Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.pdb
 /Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.genruntimeconfig.cache
 /Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/ref/Smart_Food_Delivery.dll
+/Users/vaibhavirai/Music/Oop/Smart_Food_Delivery/obj/Debug/net8.0/Smart_Food_Delivery.sourcelink.json

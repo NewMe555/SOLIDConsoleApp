@@ -9,7 +9,7 @@ namespace Smart_Food_Delivery.Discount.Implementation
     {
         public decimal Discount(decimal SubTotal)
         {
-            return SubTotal*10/100;
+            return SubTotal*10/100; 
         }
     }
 }
