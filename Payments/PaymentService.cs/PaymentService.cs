@@ -8,14 +8,15 @@ namespace Smart_Food_Delivery.Payment.PaymentService.cs
 {
     public class PaymentService
     {
-        readonly PaymentTypes _payment;
-        public PaymentService(PaymentTypes payment)
+       readonly PaymentTypes _payment;
+       public PaymentService(PaymentTypes payment)
+       {
+        _payment=payment;
+       }
+
+       public void StartPaymethod(decimal finalAmount)
         {
-            _payment=payment;
-        }
-        public void ExcutePayment(decimal grandTotal)
-        {
-            _payment.PaymentMethod(grandTotal);
+            _payment.makeMethod(finalAmount);
         }
     }
 }

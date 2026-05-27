@@ -97,18 +97,17 @@ namespace Smart_Food_Delivery
             IDiscount discount=discounts[discountType];
             DiscountService discountService=new DiscountService(discount);
             decimal finalAmount=discountService.ApplyDiscount(grandTotal);
-Console.WriteLine($"Select Payment Method: 1. Cash 2. UPI 3. Card");
-           int paymentChoice=Convert.ToInt32(Console.ReadLine());
-           Dictionary<int,PaymentTypes> payments = new()
-           {
-               {1,new Cash()},
-               {2,new UPI()},
-               {3,new Card()}
-
-           };
-           PaymentTypes payment=payments[paymentChoice];
-            PaymentService paymentService=new PaymentService(payment);
-            paymentService.ExcutePayment(finalAmount);
+System.Console.WriteLine("Select Paymethod 1. Cash 2. UPI 3.Card");
+int paymentChoice=Convert.ToInt32(Console.ReadLine());
+Dictionary<int,PaymentTypes> paymentTypes = new()
+{
+    {1,new Cash()},
+    {2,new UPI()},
+    {3,new Card()}
+};
+PaymentTypes payment=paymentTypes[paymentChoice];
+PaymentService paymentService=new PaymentService(payment);
+paymentService.
       }
     
     }

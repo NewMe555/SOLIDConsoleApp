@@ -7,7 +7,8 @@ namespace Smart_Food_Delivery.Payments.Implementation
     {
         public override void ProcessPayment(decimal grandTotal)
         {
-           Console.WriteLine($"Processing Card1 Payment of Rs.{grandTotal}");
+            Console.WriteLine($"Processing Card Payment of Rs.{grandTotal}");
         }
+        
     }
 }
