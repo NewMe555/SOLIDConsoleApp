@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
-using Smart_Food_Delivery.Resturant;
+using Smart_Food_Delivery.Resturants.Model;
 namespace Smart_Food_Delivery
 {
     public class ResturantService
     {
-        public readonly List<Restaurant> _resturant=new();
-        public ResturantService(List<Restaurant> resturant)
+        public readonly List<RestaurantModel> _resturant=new();
+        public ResturantService(List<RestaurantModel> resturant)
         {
             _resturant=resturant;
         }
@@ -25,7 +20,7 @@ namespace Smart_Food_Delivery
         { 
             int count=1;
            
-        Restaurant? resturant =GetResuturantById(resturantId);
+        RestaurantModel? resturant =GetResuturantById(resturantId);
             if (resturant == null)
             {
                  Console.WriteLine("Restaurant Not Found");
@@ -45,7 +40,7 @@ namespace Smart_Food_Delivery
          count++;
             }
         }
-        public Restaurant? GetResuturantById(int id)
+        public RestaurantModel? GetResuturantById(int id)
         {
             return _resturant.FirstOrDefault(x=>x.Id==id);
         }

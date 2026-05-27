@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Smart_Food_Delivery.Menu;
+using Smart_Food_Delivery.Restaurants.Model;
 
-namespace Smart_Food_Delivery.Resturant.Model
+namespace Smart_Food_Delivery.Cart.Model
 {
     public class CartItem
     {

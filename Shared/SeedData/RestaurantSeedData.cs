@@ -1,23 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Smart_Food_Delivery.Resturant;
+
+
+using Smart_Food_Delivery.Resturants.Model;
 
 namespace Smart_Food_Delivery.Shared.SeedData
 {
     public class RestaurantSeedData
     {
         MenuItemSeedData menuData = new MenuItemSeedData();
-        public List<Restaurant> Resturantdata(){
-            return new List<Restaurant>{
-                new Restaurant{
+        public List<RestaurantModel> Resturantdata(){
+            return new List<RestaurantModel>{
+                new RestaurantModel{
                      Id =1,
                      ResturantName="WoW MOMO",
                      Address="JP Nagar",
                      Menu =menuData.MenuWowMomo(),
                 },
-                new Restaurant{
+                new RestaurantModel{
                      Id =2,
                      ResturantName="KFC",
                      Address="KR Market",

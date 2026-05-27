@@ -1,6 +1,6 @@
 using Smart_Food_Delivery.Shared;
 
-namespace Smart_Food_Delivery
+namespace Smart_Food_Delivery.Restaurants.Model
 {
     public class MenuItem
     {

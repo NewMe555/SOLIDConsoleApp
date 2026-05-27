@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Smart_Food_Delivery.Restaurants.Model;
 
-
-namespace Smart_Food_Delivery.Resturant
+namespace Smart_Food_Delivery.Resturants.Model
 {
-    public class Restaurant
+    public class RestaurantModel
     {
         public int Id {get;set;}
         public string? ResturantName { get; set; }

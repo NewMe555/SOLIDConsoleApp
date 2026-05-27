@@ -1,12 +1,14 @@
-using Smart_Food_Delivery.Resturant.Model;
 
-namespace Smart_Food_Delivery.Menu
+
+using Smart_Food_Delivery.Cart.Model;
+
+namespace Smart_Food_Delivery.Cart.Service
 {
     public class CartService
     {
         readonly List<CartItem> _cartItem=new();
       
-        public CartService(Cart cart,List<CartItem> cartItems)
+        public CartService(CartModel cart,List<CartItem> cartItems)
         {
             _cartItem=cartItems;
      

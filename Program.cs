@@ -1,8 +1,4 @@
-﻿using Smart_Food_Delivery.Menu;
-using Smart_Food_Delivery.Restaurants.Services;
-using Smart_Food_Delivery.Resturant;
-using Smart_Food_Delivery.Discount;
-using Smart_Food_Delivery.Resturant.Model;
+﻿using Smart_Food_Delivery.Restaurants.Services;
 using Smart_Food_Delivery.Shared.SeedData;
 using Smart_Food_Delivery.Shared.Enums;
 using Smart_Food_Delivery.Discount.Implementation;
@@ -11,6 +7,16 @@ using Smart_Food_Delivery.Payment.PaymentService.cs;
 using Smart_Food_Delivery.Payment.Abstraction;
 using Smart_Food_Delivery.Payment.Implementation;
 using Smart_Food_Delivery.Payments.Implementation;
+using Smart_Food_Delivery.Restaurants.Model;
+
+using Smart_Food_Delivery.Resturants.Model;
+using Smart_Food_Delivery.Discount;
+using Smart_Food_Delivery.Cart.Model;
+using Smart_Food_Delivery.Cart.Service;
+using Smart_Food_Delivery.Order.Interface;
+using Smart_Food_Delivery.Order.Implementation;
+using Smart_Food_Delivery.Order.Service;
+using Smart_Food_Delivery.Order.Model;
 namespace Smart_Food_Delivery
 {
     public class Program
@@ -21,7 +27,7 @@ namespace Smart_Food_Delivery
         var resutrantresult=resseed.Resturantdata();
         ResturantService resturantService=new(resutrantresult);
 
-        Cart cart=new Cart();
+        CartModel cart=new CartModel();
 
         Console.WriteLine("===== Smart Food Delivery System =====\n");
         resturantService.ShowResturant();
@@ -32,7 +38,7 @@ namespace Smart_Food_Delivery
 
         resturantService.ShowMenuOfResturant(resNumber);
 
-        Restaurant? selectedResturant=resturantService.GetResuturantById(resNumber);
+        RestaurantModel? selectedResturant=resturantService.GetResuturantById(resNumber);
 
         MenuService menuService=new MenuService(selectedResturant.Menu);
         CartService cartService=new CartService(cart,cart.cartItems);
@@ -107,7 +113,11 @@ Dictionary<int,PaymentTypes> paymentTypes = new()
 };
 PaymentTypes payment=paymentTypes[paymentChoice];
 PaymentService paymentService=new PaymentService(payment);
-paymentService.
+paymentService.StartPaymethod(finalAmount);
+IorderIdGenerator orderIdGenerator=new OrderIdGenerator();
+OrderService orderService=new OrderService(orderIdGenerator);
+OrderModel order=orderService.StartOrder(selectedResturant,cart.cartItems,finalAmount,payment.GetType().Name);
+orderService.OrderSumaary(order);
       }
     
     }
