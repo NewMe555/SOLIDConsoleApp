@@ -17,6 +17,9 @@ using Smart_Food_Delivery.Order.Interface;
 using Smart_Food_Delivery.Order.Implementation;
 using Smart_Food_Delivery.Order.Service;
 using Smart_Food_Delivery.Order.Model;
+using Smart_Food_Delivery.Notification.Interface;
+using Smart_Food_Delivery.Notification.Service;
+using Smart_Food_Delivery.Notification.Implementation;
 namespace Smart_Food_Delivery
 {
     public class Program
@@ -118,6 +121,14 @@ IorderIdGenerator orderIdGenerator=new OrderIdGenerator();
 OrderService orderService=new OrderService(orderIdGenerator);
 OrderModel order=orderService.StartOrder(selectedResturant,cart.cartItems,finalAmount,payment.GetType().Name);
 orderService.OrderSumaary(order);
+INotification notification =new SmSNotifiction();
+NotificationService
+notificationService =
+    new NotificationService(
+        notification
+    );
+    System.Console.WriteLine("Sending notification...");
+    notificationService.StartNotification(order.OrderId);
       }
     
     }
