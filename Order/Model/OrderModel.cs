@@ -1,6 +1,7 @@
 
 using Smart_Food_Delivery.Cart.Model;
-using Smart_Food_Delivery.Resturants.Model;
+using Smart_Food_Delivery.Restaurants.Model;
+
 
 namespace Smart_Food_Delivery.Order.Model
 {

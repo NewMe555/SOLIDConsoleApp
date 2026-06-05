@@ -1,21 +1,17 @@
-using Smart_Food_Delivery.Resturants.Model;
+using Smart_Food_Delivery.Restaurants.Model;
+using Smart_Food_Delivery.Shared.SeedData;
+
 namespace Smart_Food_Delivery
 {
-    public class ResturantService
+    public class RestaurantService
     {
-        public readonly List<RestaurantModel> _resturant=new();
-        public ResturantService(List<RestaurantModel> resturant)
+        public readonly List<RestaurantModel> _restaurants;
+        public RestaurantService()
         {
-            _resturant=resturant;
+           var seed=new RestaurantSeedData();
+            _restaurants=seed.Resturantdata();
         }
-        public void ShowResturant()
-        {
-             Console.WriteLine("RESTURANT AVAILABLE ARE \n");
-            foreach(var res in _resturant)
-            {
-                Console.WriteLine($"{res.Id}. {res.ResturantName}");
-            }
-        }
+        public List<RestaurantModel> GetRestaurants() => _restaurants;
         public void ShowMenuOfResturant(int resturantId)
         { 
             int count=1;
@@ -42,7 +38,7 @@ namespace Smart_Food_Delivery
         }
         public RestaurantModel? GetResuturantById(int id)
         {
-            return _resturant.FirstOrDefault(x=>x.Id==id);
+            return _restaurants.FirstOrDefault(x=>x.Id==id);
         }
         
     }

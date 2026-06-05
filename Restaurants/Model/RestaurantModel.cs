@@ -1,6 +1,6 @@
 using Smart_Food_Delivery.Restaurants.Model;
 
-namespace Smart_Food_Delivery.Resturants.Model
+namespace Smart_Food_Delivery.Restaurants.Model
 {
     public class RestaurantModel
     {

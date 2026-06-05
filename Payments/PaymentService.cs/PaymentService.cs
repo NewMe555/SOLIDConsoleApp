@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Smart_Food_Delivery.Payment.Abstraction;
 
-namespace Smart_Food_Delivery.Payment.PaymentService.cs
+namespace Smart_Food_Delivery.Payment.PaymentService
 {
     public class PaymentService
     {
