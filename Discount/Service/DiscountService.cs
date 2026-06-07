@@ -11,10 +11,15 @@ namespace Smart_Food_Delivery.Discount.Service
 
         public decimal ApplyDiscount(decimal grandTotal)
         {
-            decimal discountAmount=_discount.Discount(grandTotal);
+            decimal discountAmount=_discount.GetDiscount(grandTotal);
             decimal finalAmount=grandTotal-discountAmount;
-             System.Console.WriteLine($"Discount Amount: Rs{discountAmount}");
-            System.Console.WriteLine($"Final Amount: Rs{finalAmount}");
+            if (finalAmount < 0)
+            {
+               Console.WriteLine("Warning: Total became negative. Setting to zero.");
+              finalAmount = 0;
+            }
+             Console.WriteLine($"Discount Amount: Rs{discountAmount}");
+            Console.WriteLine($"Final Amount: Rs{finalAmount}");
             return finalAmount;
         }
     }

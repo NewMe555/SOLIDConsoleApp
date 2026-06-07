@@ -1,12 +1,18 @@
-using Smart_Food_Delivery.Payment.Abstraction;
+using Smart_Food_Delivery.Payments.Abstraction;
+using Smart_Food_Delivery.Shared.Helpers;
 
 namespace Smart_Food_Delivery.Payment.Implementation
 {
     public class UPI : PaymentTypes
     {
-        public override void ProcessPayment(decimal grandTotal)
+        public override string Name => "UPI";
+
+        public override bool ProcessPayment(decimal SubTotal)
         {
-                         Console.WriteLine($"Processing UPI Payment of Rs.{grandTotal}");
+            //return true; we remove this since it alway alow to payment to be true hardcoded 
+            // so we added mockpaymentGatway so it was see if amount sufficeint to get detected
+             // Simulate UPI payment via mock gateway
+            return MockPaymentGateway.ProcessUpiPayment(SubTotal);
         }
     }
 }

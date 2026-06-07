@@ -17,6 +17,12 @@ namespace Smart_Food_Delivery
         {
             return _restaurants.FirstOrDefault(x=>x.Id==id);
         }
+         public  MenuItem? GetMenuItemById(RestaurantModel restaurant,int itemId)
+        {
+            
+         return restaurant.Menu.FirstOrDefault(x=>x.Id==itemId);
+        }
+
         
     }
 }

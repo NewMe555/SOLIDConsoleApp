@@ -1,64 +1,39 @@
 
 
+using System.Security.Cryptography.X509Certificates;
 using Smart_Food_Delivery.Cart.Model;
+using Smart_Food_Delivery.Restaurants.Model;
 
 namespace Smart_Food_Delivery.Cart.Service
 {
     public class CartService
     {
-        readonly List<CartItem> _cartItem=new();
-      
-        public CartService(CartModel cart,List<CartItem> cartItems)
+        public bool AddToCart(CartModel cart,MenuItem menuitem,int quantity)
         {
-            _cartItem=cartItems;
-     
-        }
-        public void AddToCart(CartItem cartItem)
-        { 
-            _cartItem.Add(cartItem);
+            if (quantity <= 0)
+            {
+                return false;
+            }
+            var existingItem=cart.cartItems.FirstOrDefault(x=>x.menu.Id==menuitem.Id);
+            if(existingItem is not null)
+            {
+                existingItem.Quantity+=quantity;
+                existingItem.SubTotal = existingItem.Quantity * existingItem.menu.Price; // This should be correct
+                return true;
+            }
+            cart.cartItems.Add(
+                new CartItem
+                {
+                    menu=menuitem,
+                    Quantity=quantity,
+                    SubTotal = menuitem.Price * quantity 
+                });
+                return true;
+            
          
         }
-        public void RemoveFromCart(CartItem cartItem)
-        {
-            _cartItem.Remove(cartItem);
-            
-        }
-        public decimal showCart()
-        {
-           
-            if (_cartItem.Count == 0)
-            {
-                 Console.WriteLine("Restaurant Not Found");
-                 return 0;
-            }
-            
-            int count =1;
-            decimal grandTotal=0;
-            
-            Console.WriteLine(new string('-', 50));
-            Console.WriteLine($"{"#",-3} {"Item",-20} {"Qty",-5} {"Subtotal",-10}");
-            Console.WriteLine(new string('-', 50));
-           foreach (var item in _cartItem)
-            {
-                Console.WriteLine($"{count,-3} {item.menu.Name,-20} X {item.Quantity,-5} Rs.{item.SubTotal,-10}");
-                grandTotal += item.SubTotal;
-                count++;
-            }
-            
-            Console.WriteLine(new string('-', 50));
-            Console.WriteLine($"{"Total:",-30} Rs.{grandTotal}");
-            Console.WriteLine(new string('-', 50));
-            
-            return grandTotal;
-        }
-        public CartItem? GetCartItemById(int id)
-        {
-            return _cartItem.FirstOrDefault(x=>x.Id==id);
-        }
-        public decimal calculateTotal(CartItem cartItem)
-        {
-           return cartItem.SubTotal=cartItem.menu.Price * cartItem.Quantity;
-        }
+ 
+        public decimal calculateTotal(CartModel cart)=>cart.cartItems.Sum(x=>x.SubTotal);
        
     }
 }

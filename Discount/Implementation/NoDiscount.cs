@@ -7,7 +7,8 @@ namespace Smart_Food_Delivery.Discount.Implementation
 {
     public class NoDiscount : IDiscount
     {
-        public decimal Discount(decimal SubTotal)
+         public string Name => "No Discount";
+        public decimal GetDiscount(decimal SubTotal)
         {
             return 0;
         }

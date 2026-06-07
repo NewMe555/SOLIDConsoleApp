@@ -2,15 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Smart_Food_Delivery.Payment.Abstraction;
+using Smart_Food_Delivery.Payments.Abstraction;
+using Smart_Food_Delivery.Shared.Helpers;
 
-namespace Smart_Food_Delivery.Payment.Implementation
+namespace Smart_Food_Delivery.Payments.Implementation
 {
     public class Cash : PaymentTypes
     {
-        public override void ProcessPayment(decimal grandTotal)
+        public override string Name => "Cash";
+        public override bool ProcessPayment(decimal SubTotal)
         {
-             Console.WriteLine($"Processing Cash Payment of Rs.{grandTotal}");
-        }
+           return MockPaymentGateway.ProcessCashPayment(SubTotal);
         }
     }
+}

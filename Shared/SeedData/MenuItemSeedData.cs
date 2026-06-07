@@ -1,5 +1,6 @@
 
 using Smart_Food_Delivery.Restaurants.Model;
+using Smart_Food_Delivery.Shared.Enums;
 
 
 
@@ -16,14 +17,14 @@ namespace Smart_Food_Delivery.Shared.SeedData
             Id= 1,
             Name = "Allo Burger",
             Price = 230.30m,
-            Category = FoodFactory.Veg
+            IsVegetarian = FoodFactory.Veg
           },
           new MenuItem
           {
             Id=2,
             Name="veg Momo",
             Price=150.90m,
-            Category=FoodFactory.Veg
+            IsVegetarian=FoodFactory.Veg
           },
              };
         }
@@ -36,7 +37,7 @@ namespace Smart_Food_Delivery.Shared.SeedData
                 Id = 1,
                  Name = "Egg Burger",
                  Price = 250.00m,
-                Category = FoodFactory.Nonveg
+                IsVegetarian = FoodFactory.NonVeg
             },
        
             new MenuItem
@@ -44,7 +45,7 @@ namespace Smart_Food_Delivery.Shared.SeedData
             Id=2,
             Name="Pizza",
             Price=800.00m,
-            Category=FoodFactory.Veg
+            IsVegetarian=FoodFactory.Veg
           }
                 
     };

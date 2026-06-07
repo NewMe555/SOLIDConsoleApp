@@ -1,18 +1,18 @@
-namespace Smart_Food_Delivery.Payment.Abstraction
+namespace Smart_Food_Delivery.Payments.Abstraction
 {
     public abstract class PaymentTypes
     {
-      public void makeMethod(decimal SubTotal)
+      public abstract string Name{get;}
+      public bool makeMethod(decimal SubTotal)
         {
             if (SubTotal <= 0)
             {
-                System.Console.WriteLine("Payment Failed");
-                return;
+              return false;
             }
-            ProcessPayment(SubTotal);
-            System.Console.WriteLine("Payment Sucessfull");
+            return ProcessPayment(SubTotal);
+           
         }
       
-      public abstract void ProcessPayment(decimal SubTotal);
+      public abstract bool ProcessPayment(decimal SubTotal);
     }
 }

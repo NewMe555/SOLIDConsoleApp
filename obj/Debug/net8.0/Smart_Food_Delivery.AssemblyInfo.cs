@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Smart_Food_Delivery")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+777696c19feb2ad4e4f6636c5f056fcfbbe4243c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7044803574dc555e0d35d5e6b844a6dc561107ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("Smart_Food_Delivery")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Smart_Food_Delivery")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

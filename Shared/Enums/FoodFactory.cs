@@ -1,10 +1,13 @@
-namespace Smart_Food_Delivery.Shared
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Smart_Food_Delivery.Shared.Enums
 {
     public enum FoodFactory
     {
-        Nonveg=1,
-        Veg=2,
-        Yes=3,
-        No=4
+        Veg=1,
+        NonVeg=2
     }
 }
